@@ -11,10 +11,10 @@ public class AddDeleteSearchPrintTree {
         root = bt.insertNode(root, 5);
         root = bt.insertNode(root, 7);
         root = bt.insertNode(root, 9);
-        bt.print(root);
+        bt.printTree(root);
         bt.deleteRec(root, 4);
         System.out.println();
-        bt.print(root);
+        bt.printTree(root);
         System.out.println();
         System.out.println(bt.containsNode(root, 5));
     }
@@ -59,13 +59,13 @@ public class AddDeleteSearchPrintTree {
         return minv;
     }
 
-    void print(Node root) {
+    void printTree(Node root) {
         if (root == null) {
             return;
         }
         System.out.printf("%d ", root.value);
-        print(root.left);
-        print(root.right);
+        printTree(root.left);
+        printTree(root.right);
     }
 
     boolean containsNode(Node root, int value) {

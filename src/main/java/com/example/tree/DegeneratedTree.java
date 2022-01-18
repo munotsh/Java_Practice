@@ -30,5 +30,5 @@ public class DegeneratedTree {
         print(root.left);
         print(root.right);
     }
-    
+
 }

@@ -3,22 +3,12 @@ package com.example.tree;
 import java.util.*;
 
 public class VerticalOrderTraversalOfBinaryTree {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
     class Triplet {
         int col;
         int row;
-        TreeNode n;
+        Node n;
 
-        public Triplet(int c, int r, TreeNode v) {
+        public Triplet(int c, int r, Node v) {
             this.col = c;
             this.row = r;
             this.n = v;
@@ -29,17 +19,17 @@ public class VerticalOrderTraversalOfBinaryTree {
 
     public static void main(String[] args) {
         VerticalOrderTraversalOfBinaryTree bt = new VerticalOrderTraversalOfBinaryTree();
-        TreeNode root = new TreeNode(6);
-        root.left = new TreeNode(4);
-        root.right = new TreeNode(8);
-        root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(7);
-        root.right.right = new TreeNode(9);
+        Node root = new Node(6);
+        root.left = new Node(4);
+        root.right = new Node(8);
+        root.left.left = new Node(3);
+        root.left.right = new Node(5);
+        root.right.left = new Node(7);
+        root.right.right = new Node(9);
         System.out.println(bt.verticalTraversal(root));
     }
 
-    private void BFS(TreeNode root) {
+    private void BFS(Node root) {
         Queue<Triplet> q = new ArrayDeque<>();
         q.offer(new Triplet(0, 0, root));
         while (!q.isEmpty()) {
@@ -56,7 +46,7 @@ public class VerticalOrderTraversalOfBinaryTree {
         }
     }
 
-    public List<List<Integer>> verticalTraversal(TreeNode root) {
+    public List<List<Integer>> verticalTraversal(Node root) {
         if (root == null)
             return null;
         BFS(root);
@@ -65,7 +55,7 @@ public class VerticalOrderTraversalOfBinaryTree {
             public int compare(Triplet t1, Triplet t2) {
                 if (t1.col == t2.col) {
                     if (t1.row == t2.row) {
-                        return t1.n.val - t2.n.val;
+                        return t1.n.value - t2.n.value;
                     } else {
                         return t1.row - t2.row;
                     }
@@ -79,7 +69,7 @@ public class VerticalOrderTraversalOfBinaryTree {
         int colIndex = nodes.get(0).col;
         List<Integer> curr = new ArrayList<>();
         for (Triplet t : nodes) {
-            int col = t.col, v = t.n.val;
+            int col = t.col, v = t.n.value;
             if (col == colIndex) {
                 curr.add(v);
             } else {

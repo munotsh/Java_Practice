@@ -1,9 +1,10 @@
 package com.example.tree;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class ConstructBSTFromInOrder {
-
+    int preIndex=0;
     public  static  void main(String[] args){
         ConstructBSTFromInOrder bt = new ConstructBSTFromInOrder();
 
@@ -27,7 +28,8 @@ public class ConstructBSTFromInOrder {
         // example for all the root ar grater than its child node
         int[] inOrd = {3,4,5,6,7,8,9};
         int[] preOrd = {6,4,3,5,8,7,9};
-        Node root2 = bt.constructFromInOrderAndPreOrder(inOrd, preOrd);
+        System.out.println();
+        Node root2 = bt.constructFromInOrderAndPreOrder(preOrd,inOrd);
         bt.printTree(root2);
     }
 
@@ -58,30 +60,20 @@ public class ConstructBSTFromInOrder {
         return maxind;
     }
 
-    public Node constructFromInOrderAndPreOrder(int[] inOrd, int[] preOrd)
-    {
-        if(preOrd.length == 0 || inOrd.length == 0)
-            return null;
-        int rootVal = preOrd[0];
-        Node root = new Node(rootVal);
-        if(preOrd.length == 1 || inOrd.length == 1) return root;
-        int breakPoint = 0;
-        for(int i = 0; i < inOrd.length; i++) {
-            if(inOrd[i] == rootVal) {
-                breakPoint = i;
-                break;
-            }
-        }
+    public Node constructFromInOrderAndPreOrder(int[] preorder, int[] inorder) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<inorder.length;i++)
+            map.put(inorder[i],i);
+        return Construct(preorder,inorder,0,preorder.length-1,map);
+    }
 
-        int[] leftInorder = Arrays.copyOfRange(inOrd, 0, breakPoint);
-        int[] rightInorder = Arrays.copyOfRange(inOrd, breakPoint+1, inOrd.length);
-//        System.out.println(preOrd);
-        int[] leftPreorder = Arrays.copyOfRange(preOrd, 1, leftInorder.length+1);
-        int[] rightPreorder = Arrays.copyOfRange(preOrd, leftInorder.length+1, preOrd.length);
-
-        root.left = constructFromInOrderAndPreOrder(leftPreorder, leftInorder);
-        root.right = constructFromInOrderAndPreOrder(rightPreorder, rightInorder);
-        return root;
+    public Node Construct(int[] pre,int[] in,int preStart,int preEnd,HashMap<Integer,Integer> map){
+        if(preStart>preEnd) return null;
+        Node node=new Node(pre[preIndex++]);
+        int getIndexFromIn=map.get(node.value);
+        node.left=Construct(pre,in,preStart,getIndexFromIn-1,map);
+        node.right=Construct(pre,in,getIndexFromIn+1,preEnd,map);
+        return node;
     }
 
     void printTree(Node root) {

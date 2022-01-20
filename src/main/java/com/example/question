@@ -1,0 +1,80 @@
+coding Questions:
+Write a code to find if the sum of two whole integers is equal to a given value.
+Given an array “k,” write a code to find the missing elements in the array.
+Write a code to find the shortest sequence of strings in a given dictionary of words (World Ladder Problem).
+For a given two-dimensional array that is partially filled, write a code to fill the empty cells such that each 3x3 grid has all digits from 1 to 9, exactly one time (Sudoku Problem).
+For a given set of elements, “l,” write a code to find their kth permutation.
+For a given set of integers “n,” write a program to find all the subsets for the given set.
+Given unsorted array of flight tickets(pair of source and destination place) . Output a list with cities in order they are visited. Eg [ [A,B] ,[C,D], [B,C]]. So clearly the only possible travel pattern would be A->B->C->D. Also there is "no" round trip.   https://leetcode.com/problems/reconstruct-itinerary/
+A matrix was given with some cells having obstacles. Output path from given source to destination.
+Roman numeral question
+https://leetcode.com/problems/house-robber/
+For my preparation, I mainly followed this list - https://seanprashad.com/leetcode-patterns/
+Write a Class which contains a function that simulates shell find()" API where user can pass directory, and it will return all the results in the directory.
+OOP + DFS: implement unix find command (simplified version)
+Find the non-repeated number with a little bit twisted. My solution will work in optimum time like O(N), but they want a more optimized version using queue and set data structure. I couldn't figure it out from their hints, though.
+Search for an element in 2D array
+https://leetcode.com/problems/find-the-duplicate-number/
+There are 3 types of boxes (Large, Medium, Small) and 3 types of parsels (Large, Medium, Small). The arrays of boxes and parsels are given.
+You need to put as many as possible parsels into boxes. Each box can contain the only parsel.
+Variation of https://leetcode.com/problems/concatenated-words/ except return words that word is concatenated from.( https://leetcode.com/discuss/interview-experience/413119/Amazon-or-SDE2-or-Berlin-or-Oct-2019-Reject)
+https://leetcode.com/problems/flood-fill/
+computational geometery (count number of squares formed given a list of verticies)
+Algorithm question: longest common sequence (of some child objects) in a list of parent objects that each contain a list of child objects (was OOP + algorthmic)
+Given two lists of items, find their intersection. Follow up: given any amount of lists find the intersection across all lists given a certain appearance threshold (e.g. item has to appear in all 3 lists before its considered as an intersection)
+Had 15 minutes of theoratical questions about inner workings of tries, hashtables, and some other structures. Given a list of time intervals [[10:30-12][11-15]] merge them so that the result is [[10:30-15]]
+Implement a deck of cards. It should have a shuffle and a draw functionality.
+Build nested objects based on multiple strings with properties separated by dots. The reverse of a Lodash/Get (https://egghead.io/lessons/javascript-build-lodash-get-from-scratch)
+Write a Tic-tac-toe game (React could be used)
+Given a 2D grid, find if there is a way to go through.
+Variation of https://leetcode.com/problems/number-of-islands/ with multisource BFS
+
+
+
+Data Structure:
+You’re given two Linked Lists. Write a code to sort and merge the Linked Lists so that the resulting Linked List is also sorted.
+For a particular root “r” of a binary tree, write a code to display node values at each level of the binary tree.
+For a given binary tree “B,” write a code to determine if the tree is a Binary Search Tree.  -> Done
+For a given directed graph “n” with its root node specified, write a program to clone the graph so that it displays the same edges and vertices.
+Merging 2 Binary search trees.  https://leetcode.com/problems/merge-two-binary-trees/  -> done
+Backtracking questions, DFS / BFS and string manipulation problems. LeetCode medium questions.
+adding a next pointer in BST. -> done
+One with some hashmap and other one was classical graph traversa
+Implementieren Sie eine priority queue
+Lowest Common Ancestor in an n-ary tree. -> done
+LRU-Cache. https://leetcode.com/problems/lru-cache/
+Copy linked list with random pointers
+https://leetcode.com/problems/maximum-width-of-binary-tree/ -> done
+https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/ -> done
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/  (https://leetcode.com/discuss/interview-experience/413119/Amazon-or-SDE2-or-Berlin-or-Oct-2019-Reject) -> done
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/ -> done
+Variation of https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/  -> tree
+variation of https://leetcode.com/problems/campus-bikes/.
+
+https://leetcode.com/tag/tree/
+
+System Design:
+design a chess game with specific focus on the functionality of a Pawn.
+What happens if user type "TV" in a search how will I collect the most relevant result and return to him.
+Design a demand-monitoring system for orders. You need to return how many orders were in given time range. System must work in realtime. 10 millions orders per hour.
+Design Amazon Recomendation System
+Design File System to search files with critieries
+Design Sokoban Game.https://en.wikipedia.org/wiki/Sokoban
+bit.ly at a global multizone scale
+He went coding part first: Implement a mailbox service that has following 3 functionalities:
+send message to a user
+get all messages for a user
+delete messages that are older than 7 days
+Netflix / Amazon Prime Video
+https://github.com/donnemartin/system-design-primer.
+
+
+practise behavioural que:https://www.principle.cards.
+Dan Croiter Videos
+- where do you see yourself in 5 year?
+- what was your biggest achievement?
+- how did you handled deadlines which you didn't make?
+- how did you manage difficult colleagues?
+- what do you think about deadlines?
+- do you know how deadlines work?
+- what can you say to satisfy my low-level developer ego by talking about your experiences without talking about yoursef?

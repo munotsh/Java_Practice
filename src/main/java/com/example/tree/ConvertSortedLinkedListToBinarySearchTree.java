@@ -8,8 +8,6 @@ public class ConvertSortedLinkedListToBinarySearchTree {
         head.next.next = new LinkListNode(0);
         head.next.next.next = new LinkListNode(5);
         head.next.next.next.next = new LinkListNode(9);
-//        head.next.next.next.next.next = new LinkListNode(10);
-//        head.next.next.next.next.next.next = new LinkListNode(11);
         Node root = bt.sortedListToBST(head);
         bt.printTree(root);
     }

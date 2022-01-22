@@ -1,7 +1,9 @@
 package com.example.tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryTreeRightSideView {
     public static void main(String[] args) {
@@ -19,14 +21,31 @@ public class BinaryTreeRightSideView {
     }
 
     public List<Integer> rightSideView(Node root) {
-        return rightSideViewSolve(root, new ArrayList<Integer>());
+        List<Integer> res =  new ArrayList<Integer>();
+        if(root==null)
+            return  res;
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(! q.isEmpty()){
+            int size = q.size();
+            List<Integer> rightSide =  new ArrayList<Integer>();
+            for(int i =0;i< size;i++){
+                Node temp = q.peek();
+                rightSide.add(temp.value);
+                //add right node first into queue
+                if(temp.right!=null)
+                    q.add(temp.right);
+                if(temp.left!=null)
+                    q.add(temp.left);
+
+                q.remove();
+            }
+            //get the right node ie, first node from the list and add it ro result list
+            res.add(rightSide.get(0));
+        }
+
+
+        return res;
     }
 
-    private List<Integer> rightSideViewSolve(Node root, ArrayList<Integer> list) {
-        if(root!=null){
-            list.add(root.value);
-            rightSideViewSolve(root.right,list);
-        }
-        return list;
-    }
 }

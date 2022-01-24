@@ -13,16 +13,16 @@ public class HeightOfTree {
         root = bt.insertNode(root, 9);
         bt.printTree(root);
         System.out.println();
-        System.out.println(bt.getTreeHieght(root));
+        System.out.println(bt.getTreeHeight(root));
     }
-    public int getTreeHieght(Node node)
+    public int getTreeHeight(Node node)
     {
         if (node == null)
             return -1;
         else
         {
-            int lDepth = getTreeHieght(node.left);
-            int rDepth = getTreeHieght(node.right);
+            int lDepth = getTreeHeight(node.left);
+            int rDepth = getTreeHeight(node.right);
             if (lDepth > rDepth)
                 return (lDepth + 1);
             else

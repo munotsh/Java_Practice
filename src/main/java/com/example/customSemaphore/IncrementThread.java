@@ -19,7 +19,7 @@ public class IncrementThread implements Runnable{
                   for(int i=0;i<5;i++){
                         Thread.sleep(1000);
                         System.out.println(Thread.currentThread().getName()+
-                                      " > "+CustomSemaphoreTest.SharedValue++);
+                                      " > "+SemaphoreCustomTest.SharedValue++);
                   }
                   
            } catch (InterruptedException e) {

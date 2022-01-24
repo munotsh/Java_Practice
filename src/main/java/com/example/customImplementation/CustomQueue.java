@@ -1,18 +1,18 @@
 package com.example.customImplementation;
 
-public class CustomQueue {
+public class CustomQueue<T> {
 	private int capacity;
-    int queueArr[];
+    Object queueArr[];
     int front = 0;
     int rear = -1;
     int currentSize = 0;
     public CustomQueue(int queueSize){
         this.capacity = queueSize;
-        queueArr = new int[this.capacity];
+        queueArr = new Object[this.capacity];
     }
  
    
-    public void enqueue(int item) {
+    public void enqueue(T item) {
         if (isQueueFull()) {
             System.out.println("Overflow ! Unable to add element: "+item);
         } else {
@@ -62,7 +62,7 @@ public class CustomQueue {
      
     public static void main(String a[]){
          
-        CustomQueue queue = new CustomQueue(4);
+        CustomQueue<Integer> queue = new CustomQueue<>(4);
         queue.enqueue(4);
         queue.dequeue();
         queue.enqueue(56);

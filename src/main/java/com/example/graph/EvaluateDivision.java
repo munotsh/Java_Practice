@@ -5,6 +5,8 @@ import java.util.*;
 public class EvaluateDivision {
     public static void main(String[] args) {
         EvaluateDivision evaluateDivision = new EvaluateDivision();
+        // TC: q*n
+
         //input 1
         //String[][] eq = {{"a","b"},{"b","c"},{"bc","cd"}};
         //double[] values = {1.5,2.5,5.0};
@@ -40,7 +42,6 @@ public class EvaluateDivision {
             Set<String> visited = new HashSet<>();
             res[i] = dfs(src, dest, visited, map);
         }
-
         return res;
     }
 

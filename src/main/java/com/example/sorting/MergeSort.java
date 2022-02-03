@@ -2,6 +2,7 @@ package com.example.sorting;
 
 public class MergeSort {
     public static void main(String[] args) {
+//        TC: O(n*Log n)
         int[] inputArray = { 5, 8, 4, 6, 9, 3, 1, 2, 7 };
         System.out.println("INPUT ::");
         printArray(inputArray);

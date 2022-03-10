@@ -1,6 +1,6 @@
 package com.example.tree;
 
-public class InvertBinaryTree {
+public class InvertOrMirrorBinaryTree {
     public static void main(String[] args) {
          /* Construct the following tree
                    6
@@ -9,7 +9,7 @@ public class InvertBinaryTree {
               /  \   /  \
              3    5 7    9
         */
-        InvertBinaryTree bt = new InvertBinaryTree();
+        InvertOrMirrorBinaryTree bt = new InvertOrMirrorBinaryTree();
         Node root = new Node(6);
         root.left = new Node(4);
         root.right = new Node(8);

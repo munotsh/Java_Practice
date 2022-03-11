@@ -3,6 +3,14 @@ package com.example.Array;
 import java.util.Arrays;
 
 public class MeanAndMedian {
+    public static void main(String args[])
+    {
+        int a[] = { 1, 3, 4, 2, 7, 5, 8, 6 };
+        int n = a.length;
+
+        System.out.println("Mean = " + findMean(a, n)); // 4.5
+        System.out.println("Median = " + findMedian(a, n)); // 4.5
+    }
 
 	public static double findMean(int a[], int n)
     {
@@ -23,14 +31,5 @@ public class MeanAndMedian {
         return (double)(a[(n - 1) / 2] + a[n / 2]) / 2.0;
     }
  
-    public static void main(String args[])
-    {
-        int a[] = { 1, 3, 4, 2, 7, 5, 8, 6 };
-        int n = a.length;
-       
-        // Function call
-        System.out.println("Mean = " + findMean(a, n));
-        System.out.println("Median = " + findMedian(a, n));
-    }
 
 }

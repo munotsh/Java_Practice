@@ -1,7 +1,6 @@
-package com.example.Array;
+package com.example.array;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class SlidingWindowMaximum {
     public static void main(String[] args) {

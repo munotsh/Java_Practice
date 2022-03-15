@@ -1,4 +1,4 @@
-package com.example.Array;
+package com.example.array;
 
 //Sliding window technique TS:O(n)
 public class MaximumSumSubArraySlidingWindow {

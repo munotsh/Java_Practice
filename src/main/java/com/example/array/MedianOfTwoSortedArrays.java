@@ -1,4 +1,4 @@
-package com.example.Array;
+package com.example.array;
 
 public class MedianOfTwoSortedArrays {
     public static void main(String args[])

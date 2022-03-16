@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class PickUpCoinsForMaximumGain {
     public static void main(String[] args) {
 
-        int[] arr = {5, 25, 10, 1};
+        int[] arr = {10, 25, 5, 1, 10, 5};
         System.out.println(pickUpCoins(arr));
     }
 

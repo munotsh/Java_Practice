@@ -1,5 +1,7 @@
 package com.example.Array;
 
+import java.util.Arrays;
+
 public class TaskScheduler {
     public static void main(String[] args) {
         TaskScheduler ts = new TaskScheduler();
@@ -13,11 +15,11 @@ public class TaskScheduler {
         for(char c:tasks){
             charMap[c-'A']++;
         }
-
-        int max = charMap[0]-1;
+        Arrays.sort(charMap);
+        int max = charMap[25]-1;
         int ideal_slot = max*n;
 
-        for(int i =1;i<25;i++){
+        for(int i =24;i>=0;i--){
             ideal_slot -= Math.min(charMap[i],max);
         }
 

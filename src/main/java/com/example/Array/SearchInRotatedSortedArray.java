@@ -1,4 +1,4 @@
-package com.example.array;
+package com.example.Array;
 
 public class SearchInRotatedSortedArray {
     public static void main(String[] args) {

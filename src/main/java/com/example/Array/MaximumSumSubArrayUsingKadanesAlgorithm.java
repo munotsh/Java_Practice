@@ -1,4 +1,4 @@
-package com.example.array;
+package com.example.Array;
 
 public class MaximumSumSubArrayUsingKadanesAlgorithm {
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package com.example.stack;
 
 import java.util.Stack;
 
-public class ExpressionToEvaluateIt {
+public class ExpressionToEvaluateOrBasicCalculator {
 // Expression to evaluate it 
 	public static void main(String[] args) {
 //		System.out.println(evaluate("10 + 2 * 6"));

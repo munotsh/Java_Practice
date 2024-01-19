@@ -1,6 +1,6 @@
 package com.example.designPattern.chainOfResponsibilityPattern;
 
-public class Divission implements Chain{
+public class Divisions implements Chain{
 	Chain chain;
 	@Override
 	public void nextChain(Chain chain) {

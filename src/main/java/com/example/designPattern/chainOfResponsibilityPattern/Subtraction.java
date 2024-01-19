@@ -1,6 +1,6 @@
 package com.example.designPattern.chainOfResponsibilityPattern;
 
-public class Substractions implements Chain{
+public class Subtraction implements Chain{
 	
 	Chain chain;
 	@Override

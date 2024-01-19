@@ -10,7 +10,7 @@ public class HelloWorld {
         for (String word : words) {
             map.add(word);
         }
-        Arrays.sort(words, new Comparator() {
+        Arrays.sort(words, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
                 return ((Integer) o2.length()).compareTo(o1.length());

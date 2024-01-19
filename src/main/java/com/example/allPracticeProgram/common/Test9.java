@@ -25,7 +25,7 @@ public class Test9 {
 	        }
 	        res += less[0] * greater[1] + greater[0] * less[1];
 	    }
-	    return res;
+//	    return res;
 
 	}
 

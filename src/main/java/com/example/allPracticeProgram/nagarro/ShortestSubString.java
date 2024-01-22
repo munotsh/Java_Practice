@@ -24,7 +24,7 @@ System.out.println(Minimum_Window(s1.toCharArray(), s2.toCharArray()));
 	        m[t[i]]++;
 	    }
 	 
-	    // References of Window
+	    // References of FixedWindowRateLimiter
 	    int i = 0;
 	    int j = 0;
 	 

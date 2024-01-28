@@ -1,6 +1,8 @@
 package com.example.test;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Queue;
 
 public class DeckOfCards {
 
@@ -23,6 +25,14 @@ public class DeckOfCards {
 		return null;
 	}
 
+	public void dealToAllPlayers(Queue<String> players) {
+		while (currentCard < 52) {
+			String playerName = players.poll();
+			System.out.println(playerName+" : "+deck[currentCard++]);
+			players.add(playerName);
+		}
+	}
+
 	public void shuffle() {
 		for (int i = 0; i < deck.length; i++) {
 			int index = (int) (Math.random() * deck.length);
@@ -43,7 +53,14 @@ public class DeckOfCards {
 		System.out.println("shuffle cards");
 		deckOfCards.shuffle();
 		deckOfCards.printDeck();
-		System.out.println("Deal cards");
-		System.out.println(deckOfCards.deal());
+//		System.out.println("Deal cards");
+//		System.out.println(deckOfCards.deal());
+		Queue<String> players  = new ArrayDeque<>();
+		for(int i=1;i<=4;i++){
+		players.add("Player"+i);
+		}
+		deckOfCards.dealToAllPlayers(players);
+
+
 	}
 }

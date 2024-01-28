@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.companies.loblaw;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

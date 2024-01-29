@@ -3,7 +3,7 @@ package com.example.test;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AllPossiblePalindrom {
+public class AllPossiblePalindrome {
 
 	public static void main(String[] args) {
 //		String str = "aabbbaa";

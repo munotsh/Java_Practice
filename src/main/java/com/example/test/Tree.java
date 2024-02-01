@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Tree {
-	class Node {
+	static class Node {
 		int value;
 		Node left;
 		Node right;
@@ -16,7 +16,7 @@ public class Tree {
 		}
 	}
 
-	Node root;
+	public Node root;
 
 	private Node addRecursive(Node current, int value) {
 		if (current == null) {
@@ -33,10 +33,6 @@ public class Tree {
 		}
 
 		return current;
-	}
-
-	public void add(int value) {
-		root = addRecursive(root, value);
 	}
 
 	private Node deleteRec(Node root, int key) {
@@ -71,10 +67,6 @@ public class Tree {
 		return minv;
 	}
 
-	void deleteKey(int key) {
-		root = deleteRec(root, key);
-	}
-
 	private boolean containsNodeRecursive(Node current, int value) {
 		if (current == null) {
 			return false;
@@ -86,10 +78,6 @@ public class Tree {
 				: containsNodeRecursive(current.right, value);
 	}
 
-	public boolean containsNode(int value) {
-		return containsNodeRecursive(root, value);
-	}
-
 	void inorderRec(Node root) {
 		if (root != null) {
 			inorderRec(root.left);
@@ -98,9 +86,6 @@ public class Tree {
 		}
 	}
 
-	void inorder() {
-		inorderRec(root);
-	}
 
 	void postOrderRec(Node node) {
 		if (node == null)
@@ -111,10 +96,6 @@ public class Tree {
 		System.out.print(node.value + " ");
 	}
 
-	void postorder() {
-		postOrderRec(root);
-	}
-
 	void preOrderRec(Node node) {
 		if (node == null)
 			return;
@@ -122,10 +103,6 @@ public class Tree {
 		System.out.print(node.value + " ");
 		preOrderRec(node.left);
 		preOrderRec(node.right);
-	}
-
-	void preOrder() {
-		preOrderRec(root);
 	}
 
 	public void levelOrderTraversal(Node startNode) {
@@ -142,11 +119,7 @@ public class Tree {
         }
     }
 	
-	void levelOrderOrder() {
-		levelOrderTraversal(root);
-	}
-	
-	public int treeHight(Node node) 
+	public int treeHight(Node node)
     {
         if (node == null)
             return -1;
@@ -160,10 +133,6 @@ public class Tree {
                 return (rDepth + 1);
         }
     }
-	
-	public int getTreeHieght() {
-		return treeHight(root);
-	}
 	
 	public boolean degenerate(Node node) {
 	    if (node.left != null) {
@@ -181,33 +150,77 @@ public class Tree {
 	    }
 	}
 	
-	public boolean isDegenerated() {
-		return degenerate(root);
+	public int largestElement(Node temp){
+		//Check whether tree is empty
+		if(root == null) {
+			return 0;
+		}
+		else{
+			int leftMax, rightMax;
+			//Max will store temp's data
+			int max = temp.value;
+			//It will find largest element in left subtree
+			if(temp.left != null){
+				leftMax = largestElement(temp.left);
+				max = Math.max(max, leftMax);
+			}
+			//It will find largest element in right subtree
+			if(temp.right != null){
+				rightMax = largestElement(temp.right);
+				max = Math.max(max, rightMax);
+			}
+			return max;
+		}
 	}
 
-	
-	
+	public int lowestElement(Node temp){
+		//Check whether tree is empty
+		if(root == null) {
+			System.out.println("Tree is empty");
+			return 0;
+		}
+		else{
+			int leftMax, rightMax;
+			//Max will store temp's data
+			int min = temp.value;
+			//It will find lowest element in left subtree
+			if(temp.left != null){
+				leftMax = lowestElement(temp.left);
+				min = Math.min(min, leftMax);
+			}
+
+			//It will find lowest element in right subtree
+			if(temp.right != null){
+				rightMax = lowestElement(temp.right);
+				min = Math.min(min, rightMax);
+			}
+			return min;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		Tree bt = new Tree();
-		bt.add(6);
-		bt.add(4);
-		bt.add(8);
-		bt.add(3);
-		bt.add(5);
-		bt.add(7);
-		bt.add(9);
+		bt.root = new Node(6);
+		bt.addRecursive(bt.root,4);
+		bt.addRecursive(bt.root,8);
+		bt.addRecursive(bt.root,3);
+		bt.addRecursive(bt.root,5);
+		bt.addRecursive(bt.root,7);
+		bt.addRecursive(bt.root,9);
 //		check whether tree is degenerated
-//		bt.add(10);bt.add(9);bt.add(8);bt.add(7);bt.add(6);bt.add(5);bt.add(4);
-//		System.out.println(bt.isDegenerated());
-		System.out.println(bt.getTreeHieght());
-		bt.inorder();
-		bt.postorder();
-		bt.preOrder();
-		bt.levelOrderOrder();
-		System.out.println(bt.containsNode(8));
-		bt.deleteKey(8);
-		bt.inorder();
-		System.out.println(bt.containsNode(8));
+//		bt.addRecursive(bt.root,10);bt.addRecursive(bt.root,9);bt.addRecursive(bt.root,8);bt.addRecursive(bt.root,7);bt.addRecursive(bt.root,6);bt.addRecursive(bt.root,5);bt.addRecursive(bt.root,4);
+//		System.out.println(bt.degenerate(bt.root));
+		System.out.println(bt.treeHight(bt.root));
+		bt.inorderRec(bt.root);
+		bt.postOrderRec(bt.root);
+		bt.preOrderRec(bt.root);
+		bt.levelOrderTraversal(bt.root);
+		System.out.println(bt.containsNodeRecursive(bt.root,8));
+		bt.deleteRec(bt.root,8);
+		bt.inorderRec(bt.root);
+		System.out.println(bt.containsNodeRecursive(bt.root,8));
+		System.out.println(bt.largestElement(bt.root));
+		System.out.println(bt.lowestElement(bt.root));
 	}
 }

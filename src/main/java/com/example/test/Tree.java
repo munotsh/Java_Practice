@@ -209,7 +209,10 @@ public class Tree {
 		bt.addRecursive(bt.root,7);
 		bt.addRecursive(bt.root,9);
 //		check whether tree is degenerated
-//		bt.addRecursive(bt.root,10);bt.addRecursive(bt.root,9);bt.addRecursive(bt.root,8);bt.addRecursive(bt.root,7);bt.addRecursive(bt.root,6);bt.addRecursive(bt.root,5);bt.addRecursive(bt.root,4);
+//		bt.addRecursive(bt.root,10);bt.addRecursive(bt.root,9);
+//		bt.addRecursive(bt.root,8);bt.addRecursive(bt.root,7);
+//		bt.addRecursive(bt.root,6);bt.addRecursive(bt.root,5);
+//		bt.addRecursive(bt.root,4);
 //		System.out.println(bt.degenerate(bt.root));
 		System.out.println(bt.treeHight(bt.root));
 		bt.inorderRec(bt.root);

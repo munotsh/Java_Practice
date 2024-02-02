@@ -11,7 +11,7 @@ public class UBSTest3 {
 
 	public static void main(String[] args) {
 
-//		SumKNumberOfElementToTargetedSum t = (a,b) -> {return a+b;};
+//		Test t = (a,b) -> {return a+b;};
 //		System.out.print(t.add(2, 5));
 		
 //		List<Integer> arr = new ArrayList<Integer>();

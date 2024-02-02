@@ -1,7 +1,5 @@
 package com.example.companies.loblaw;
 
-import java.util.LinkedList;
-
 public class AddTwoNumbersLinkedList {
 	public static class ListNode {
 		int val;

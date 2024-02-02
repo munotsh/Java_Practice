@@ -6,7 +6,7 @@ public class ExpressionToCheckInGoodOrderOrNot {
 //	Expression to check if it is in good order or not 
 	public static void main(String[] args) {
         String test="12*9-[(66+11)]*(77-22)";
-        System.out.println("Test equation: "+test);
+        System.out.println("SumKNumberOfElementToTargetedSum equation: "+test);
         System.out.println("Valid ? "+checkValid(test.toCharArray()));
     }
     static boolean checkValid(char[] equ){

@@ -1,4 +1,4 @@
-package com.example.allPracticeProgram.regularExpressions;
+package com.example.regularExpressions;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

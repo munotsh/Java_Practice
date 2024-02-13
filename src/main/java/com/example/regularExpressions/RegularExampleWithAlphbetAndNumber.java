@@ -1,4 +1,4 @@
-package com.example.allPracticeProgram.regularExpressions;
+package com.example.regularExpressions;
 
 public class RegularExampleWithAlphbetAndNumber {
 

@@ -12,6 +12,10 @@ public class ValidAnagram {
         // bit difficult
         System.out.println(obj.isAnagram2("anagram", "nagaram"));
         System.out.println(obj.isAnagram2("rat", "cat"));
+
+        // checking by counter of charachter one will increment and other one will decrement
+        System.out.println(obj.isAnagramCounting("anagram", "nagaram"));
+        System.out.println(obj.isAnagramCounting("rat", "cat"));
     }
 
     public boolean isAnagram1(String s, String t) {
@@ -44,5 +48,22 @@ public class ValidAnagram {
             }
         }
         return result;
+    }
+
+    public boolean isAnagramCounting(String string1, String string2) {
+        if (string1.length() != string2.length()) {
+            return false;
+        }
+        int count[] = new int[256];
+        for (int i = 0; i < string1.length(); i++) {
+            count[string1.charAt(i)]++;
+            count[string2.charAt(i)]--;
+        }
+        for (int i = 0; i < 256; i++) {
+            if (count[i] != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -2,6 +2,8 @@ package com.example.Array;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MinimumSumAfterKthCeilingOperation {
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class MinimumSumAfterKthCeilingOperation {
             prio.add((double) i);
         }
 
+//        IntStream.range(0,k).mapToObj(i -> prio.add(Math.ceil(prio.poll()/2))).forEach(i -> System.out.println(prio));
         while (k > 0) {
             System.out.println(prio);
             prio.add(Math.ceil(prio.poll() / 2));

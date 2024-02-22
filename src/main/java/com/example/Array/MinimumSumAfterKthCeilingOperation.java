@@ -1,11 +1,7 @@
 package com.example.Array;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class MinimumSumAfterKthCeilingOperation {
     public static void main(String[] args) {

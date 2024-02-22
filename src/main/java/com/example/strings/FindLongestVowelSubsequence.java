@@ -1,8 +1,5 @@
 package com.example.strings;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class FindLongestVowelSubsequence {
     public static void main(String[] args) {
         String str = "aeiaaioooaaeeuuaeiou";

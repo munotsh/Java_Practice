@@ -1,5 +1,7 @@
 package com.example.Array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.stream.IntStream;
@@ -14,10 +16,10 @@ public class MinimumSumAfterKthCeilingOperation {
 
     private static int minSum(int[] arr, int k) {
         PriorityQueue<Double> prio = new PriorityQueue<>(Collections.reverseOrder());
+//        Arrays.stream(arr).mapToObj(i -> prio.add((double)i)).forEach(System.out::println);
         for (int i : arr) {
             prio.add((double) i);
         }
-
 //        IntStream.range(0,k).mapToObj(i -> prio.add(Math.ceil(prio.poll()/2))).forEach(i -> System.out.println(prio));
         while (k > 0) {
             System.out.println(prio);

@@ -6,9 +6,9 @@ import java.util.LinkedList;
 public class LRUCacheImpl {
     // Hash map to store the cache data
     // key as Integer and Value as String
-    HashMap<Integer, String> data = new HashMap<Integer, String>();
+    HashMap<Integer, String> map = new HashMap<Integer, String>();
     // Linked list to store the order of cache access
-    LinkedList<Integer> order = new LinkedList<Integer>();
+    LinkedList<Integer> linkedList = new LinkedList<Integer>();
     // size of the cache
     int capacity;
 
@@ -20,29 +20,29 @@ public class LRUCacheImpl {
     void put(int key, String val) {
 
         // Check if the cache is full by comparing the size of the list with capacity
-        if (order.size() >= capacity) {
+        if (linkedList.size() >= capacity) {
             // if the cache is full, then remove the last element from the order list and
             // also from the data
             // so we will get room for new cache
-            int keyRemoved = order.removeLast(); // remove from order
-            data.remove(keyRemoved);// remove from data
+            int keyRemoved = linkedList.removeLast(); // remove from order
+            map.remove(keyRemoved);// remove from data
         }
 
         // add the new cache to top of the list and also to data
-        order.addFirst(key);// add to top of the list
-        data.put(key, val);// add to data
+        linkedList.addFirst(key);// add to top of the list
+        map.put(key, val);// add to data
 
     }
 
     // get
     String get(int key) {
-        String res = data.get(key); //get the value from map using the key
+        String res = map.get(key); //get the value from map using the key
         if(res != null) {
             //if the data is present then we need to update the access order
             //move the current key to top of the access list
             //to move to top of the list first remove it and re-add it
-            order.remove((Object) key);
-            order.addFirst(key);
+            linkedList.remove((Object) key);
+            linkedList.addFirst(key);
         }else {
             //if value is not present in the cache then its a cache miss
             //and we will return null
@@ -56,9 +56,9 @@ public class LRUCacheImpl {
     // display method
     public void display() {
 
-        for (int i = 0; i < order.size(); i++) {
-            int key = order.get(i);
-            System.out.println(key + " => " + data.get(key));
+        for (int i = 0; i < linkedList.size(); i++) {
+            int key = linkedList.get(i);
+            System.out.println(key + " => " + map.get(key));
         }
     }
 

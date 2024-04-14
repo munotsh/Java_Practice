@@ -30,7 +30,7 @@ public class MinimumTimeToCollectionGarbageByThreeTruck {
                 map.put('G', i);
             }
         }
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         for (Map.Entry<Character, Integer> e : map.entrySet()) {
             int sum = 0;
             int garCount = 0;

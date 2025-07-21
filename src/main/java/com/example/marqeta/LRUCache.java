@@ -77,4 +77,17 @@ public class LRUCache {
             else tail = node.prev;
         }
     }
+        public static void main(String[] args) {
+            LRUCache cache = new LRUCache(3);
+
+            cache.put(1, "A");
+            cache.put(2, "B");
+            cache.put(3, "C");
+            System.out.println("Get 1: " + cache.get(1)); // Access 1 to make it recently used
+            cache.put(4, "D"); // This should evict key 2 (least recently used)
+
+            System.out.println("Get 2: " + cache.get(2)); // Should return null
+            System.out.println("Get 3: " + cache.get(3)); // Should still be present
+            System.out.println("Get 4: " + cache.get(4)); // Should return D
+        }
 }

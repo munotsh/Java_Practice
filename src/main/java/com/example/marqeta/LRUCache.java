@@ -1,6 +1,12 @@
 package com.example.marqeta;
 import java.util.*;
 
+
+//The Least Recently Used (LRU) cache is a data structure designed
+// to manage limited memory by keeping only the most recently accessed
+// items. When the cache reaches its capacity, it evicts the item that
+// hasn’t been used for the longest time
+
 public class LRUCache {
     private final int capacity;
     private final Map<Integer, Node> map;
@@ -12,14 +18,14 @@ public class LRUCache {
         this.dll = new DoublyLinkedList();
     }
 
-    public String get(int key) {
+    public synchronized String get(int key) {
         if (!map.containsKey(key)) return null;
         Node node = map.get(key);
         dll.moveToFront(node);
         return node.value;
     }
 
-    public void put(int key, String value) {
+    public synchronized void put(int key, String value) {
         if (map.containsKey(key)) {
             Node node = map.get(key);
             node.value = value;
